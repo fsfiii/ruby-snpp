@@ -1,0 +1,56 @@
+Net::SNPP 0.3 README - 2003-09-25
+=================================
+
+  Net::SNPP is a Ruby client library for the Simple Network Pager Protocol.
+  For now, it implements SNPP Level 1 commands as documented in RFC1861:
+
+  http://www.faqs.org/rfcs/rfc1861.html
+
+  Also included in the distribution is a sample client, test_snpp.rb.
+  
+  Please let me know if you are using this module and how well it's working!
+
+Requirements
+------------
+
+  * ruby 1.6 (or higher)
+
+Install
+-------
+
+  Uncompress the archive and enter its top directory.
+  Then type:
+
+    $ ruby setup.rb config
+   ($ su)
+    # ruby setup.rb install
+
+  You can also install files into your favorite directory
+  by supplying setup.rb some options. Try "ruby setup.rb --help".
+
+Uninstall
+---------
+
+  Delete fpage.rb from the directory that holds the ruby binary and
+  snpp.rb from your lib/ruby/site_ruby/<ruby version>/net directory.
+
+Usage
+-----
+
+require 'net/snpp'
+
+your_snpp_server = 'snpp.yourprovider.com'
+pager = '123456'
+message = 'Hello from Net::SNPP!'
+
+c = Net::SNPP.new(your_snpp_server, 444)
+c.send(pager, message)
+c.close
+
+License
+-------
+
+This is free software.  Do with it as you wish.  There are no warranties.
+The software may or may not work.
+
+Frank Fejes <frank@fejes.net>

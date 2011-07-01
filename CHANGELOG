@@ -1,0 +1,14 @@
+Changes in v0.3:
+================
++ :message and :debug are now attr_accessor
++ now uses Minero Aoki's updated setup.rb instead of install.rb
+
+Changes in v0.2:
+================
++ added add_pager method for specifying multiple pagers
++ SNPP.initialize now handles a block (yields an open snpp connection that
+  it will close after the block has completed)
++ added :message as an attr_writer
++ SNPP.send now can be called without any parameters if the pager and message
+  have already been set
++ added a paging program, bin/fpage.rb, that's more useful than test_snpp.rb
